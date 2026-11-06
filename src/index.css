@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg-color: #f8fafc;
+  --text-main: #1e293b;
+  --accent-ice: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Noto Sans JP', 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* スクロールバーの洗練された控えめなデザイン */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.55);
+}
+
+/* 選択ハイライト */
+::selection {
+  background: rgba(186, 230, 253, 0.5);
+  color: #0f172a;
+}
+
+/* 控えめなブラーガラスユーティリティ */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.03), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Canvasのタッチ操作管理: デフォルトは縦スクロール可能、キューブドラッグ時のみ抑制 */
+canvas {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
